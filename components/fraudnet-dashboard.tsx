@@ -10,7 +10,6 @@ import {
   Network,
   ShieldAlert,
   Users,
-  Waypoints,
 } from 'lucide-react';
 import {
   Area,
@@ -141,8 +140,8 @@ export function FraudNetDashboard() {
   if (error)
     return (
       <main className="grid min-h-screen place-items-center bg-[#050b14] p-6 text-slate-100">
-        <div className="max-w-md rounded-xl border border-rose-800 bg-rose-950/30 p-6 text-center">
-          <ShieldAlert className="mx-auto text-rose-300" />
+        <div className="max-w-md rounded-xl border border-[#ff5c55]/50 bg-[#ff5c55]/10 p-6 text-center">
+          <ShieldAlert className="mx-auto text-[#ff6b63]" />
           <h1 className="mt-3 text-xl font-semibold">
             FraudNet could not start
           </h1>
@@ -155,20 +154,21 @@ export function FraudNetDashboard() {
       <header className="sticky top-0 z-20 border-b border-slate-800/90 bg-[#07101c]/90 px-4 py-3 backdrop-blur-xl lg:px-7">
         <div className="mx-auto flex max-w-[1680px] items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <div className="grid h-9 w-9 place-items-center rounded-lg border border-cyan-700/60 bg-cyan-400/10">
-              <Waypoints size={20} className="text-cyan-300" />
-            </div>
-            <div>
-              <h1 className="font-semibold tracking-tight text-white">
-                FraudNet
-              </h1>
-              <p className="hidden text-xs text-slate-500 sm:block">
-                Follow the money. Find the network.
-              </p>
-            </div>
+            {/* oxlint-disable-next-line next/no-img-element -- local brand asset avoids a Vinext next/image runtime incompatibility */}
+            <img
+              src="/logo-header.png"
+              alt="FraudNet"
+              width="160"
+              height="50"
+              className="h-9 w-[116px] shrink-0 object-contain object-left sm:h-11 sm:w-[142px]"
+            />
+            <span className="hidden h-6 w-px bg-[#37d9f3]/25 lg:block" />
+            <p className="hidden text-xs text-slate-500 lg:block">
+              Follow the money. Find the network.
+            </p>
           </div>
           <div className="flex items-center gap-2">
-            <span className="rounded-full border border-emerald-800 bg-emerald-950/50 px-2.5 py-1 text-xs font-semibold text-emerald-300">
+            <span className="rounded-full border border-[#37d9f3]/35 bg-[#37d9f3]/10 px-2.5 py-1 text-xs font-semibold text-[#62e6f8]">
               ● DEMO DATA
             </span>
             <Button
@@ -182,7 +182,7 @@ export function FraudNetDashboard() {
                     ?.scrollIntoView({ behavior: 'smooth' });
                 }
               }}
-              className="bg-cyan-400 text-slate-950 hover:bg-cyan-300"
+              className="bg-[#35d7f2] text-[#031018] hover:bg-[#66e7f8]"
             >
               Start investigation
             </Button>
@@ -193,7 +193,7 @@ export function FraudNetDashboard() {
         <section>
           <div className="mb-4 flex flex-wrap items-end justify-between gap-3">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[.18em] text-cyan-300">
+              <p className="text-xs font-semibold uppercase tracking-[.18em] text-[#55def5]">
                 Financial intelligence overview
               </p>
               <h2 className="mt-1 text-2xl font-semibold tracking-tight text-white">
@@ -264,7 +264,7 @@ export function FraudNetDashboard() {
                 </p>
               </div>
               {trace && (
-                <span className="rounded-full border border-cyan-800 bg-cyan-950/50 px-3 py-1 text-xs text-cyan-300">
+                <span className="rounded-full border border-[#35d7f2]/35 bg-[#35d7f2]/10 px-3 py-1 text-xs text-[#62e6f8]">
                   Trace active · {trace.pathLength} hops
                 </span>
               )}
@@ -310,8 +310,8 @@ export function FraudNetDashboard() {
                 <AreaChart data={chart}>
                   <defs>
                     <linearGradient id="riskFill" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stopColor="#fb7185" stopOpacity={0.5} />
-                      <stop offset="100%" stopColor="#fb7185" stopOpacity={0} />
+                      <stop offset="0%" stopColor="#ff5c55" stopOpacity={0.5} />
+                      <stop offset="100%" stopColor="#ff5c55" stopOpacity={0} />
                     </linearGradient>
                   </defs>
                   <CartesianGrid stroke="#1e293b" strokeDasharray="4 4" />
@@ -331,14 +331,14 @@ export function FraudNetDashboard() {
                   <Area
                     type="monotone"
                     dataKey="total"
-                    stroke="#22d3ee"
+                    stroke="#35d7f2"
                     fill="transparent"
                     strokeWidth={2}
                   />
                   <Area
                     type="monotone"
                     dataKey="suspicious"
-                    stroke="#fb7185"
+                    stroke="#ff5c55"
                     fill="url(#riskFill)"
                     strokeWidth={2}
                   />
@@ -347,11 +347,11 @@ export function FraudNetDashboard() {
             </div>
             <div className="mt-4 flex gap-5 text-xs text-slate-400">
               <span>
-                <i className="mr-2 inline-block h-2 w-2 rounded-full bg-cyan-400" />
+                <i className="mr-2 inline-block h-2 w-2 rounded-full bg-[#35d7f2]" />
                 All activity
               </span>
               <span>
-                <i className="mr-2 inline-block h-2 w-2 rounded-full bg-rose-400" />
+                <i className="mr-2 inline-block h-2 w-2 rounded-full bg-[#ff5c55]" />
                 Elevated risk
               </span>
             </div>
@@ -373,7 +373,7 @@ export function FraudNetDashboard() {
                         setSelectedId(tx.id);
                         setTrace(undefined);
                       }}
-                      className={`flex w-full items-center justify-between gap-2 rounded-lg border px-3 py-2 text-left transition ${selected?.id === tx.id ? 'border-cyan-700 bg-cyan-950/40' : 'border-slate-800 bg-slate-950/40 hover:border-slate-700'}`}
+                      className={`flex w-full items-center justify-between gap-2 rounded-lg border px-3 py-2 text-left transition ${selected?.id === tx.id ? 'border-[#35d7f2]/55 bg-[#35d7f2]/10' : 'border-slate-800 bg-slate-950/40 hover:border-[#35d7f2]/30'}`}
                     >
                       <div>
                         <p className="font-mono text-xs text-slate-300">

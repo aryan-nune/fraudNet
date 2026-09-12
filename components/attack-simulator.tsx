@@ -40,10 +40,10 @@ export function AttackSimulator({
     lastAttackIds.includes(t.id),
   );
   return (
-    <section className="rounded-xl border border-violet-800/40 bg-gradient-to-br from-violet-950/35 to-slate-900/75 p-5">
+    <section className="rounded-xl border border-[#ff5c55]/30 bg-gradient-to-br from-[#ff5c55]/10 to-slate-900/75 p-5">
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[.16em] text-violet-300">
+          <p className="text-xs font-semibold uppercase tracking-[.16em] text-[#ff7d76]">
             Attack laboratory
           </p>
           <h2 className="mt-1 text-xl font-semibold text-white">
@@ -54,7 +54,7 @@ export function AttackSimulator({
             them.
           </p>
         </div>
-        <Radar className="text-violet-300" />
+        <Radar className="text-[#ff6b63]" />
       </div>
       <div className="mt-4 flex flex-col gap-2 sm:flex-row">
         <Select
@@ -74,7 +74,7 @@ export function AttackSimulator({
         </Select>
         <Button
           onClick={() => createAttack(type)}
-          className="bg-violet-500 text-white hover:bg-violet-400"
+          className="bg-[#ff5c55] text-white hover:bg-[#ff746d]"
         >
           <Sparkles />
           Generate fraud attack
@@ -83,7 +83,7 @@ export function AttackSimulator({
           <Button
             onClick={runAttack}
             variant="outline"
-            className="border-cyan-700 bg-transparent text-cyan-300 hover:bg-cyan-950 hover:text-cyan-200"
+            className="border-[#35d7f2]/45 bg-transparent text-[#62e6f8] hover:bg-[#35d7f2]/10 hover:text-white"
           >
             <Play />
             Run FraudNet
@@ -111,7 +111,7 @@ export function AttackSimulator({
                 const risk = assessments.get(tx.id)!;
                 return (
                   <tr key={tx.id} className="border-t border-slate-800">
-                    <td className="py-2 font-mono text-violet-300">{tx.id}</td>
+                    <td className="py-2 font-mono text-[#ff817a]">{tx.id}</td>
                     <td className="py-2 text-slate-300">
                       {tx.senderId} → {tx.recipientId}
                     </td>

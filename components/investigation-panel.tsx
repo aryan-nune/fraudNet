@@ -48,7 +48,7 @@ export function InvestigationPanel({
       <div className="rounded-xl border border-slate-800 bg-slate-900/75 p-5">
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div>
-            <p className="font-mono text-xs text-cyan-300">{tx.id}</p>
+            <p className="font-mono text-xs text-[#62e6f8]">{tx.id}</p>
             <h2 className="mt-1 text-xl font-semibold text-white">
               Investigation detail
             </h2>
@@ -68,7 +68,7 @@ export function InvestigationPanel({
               {sender.id} · {sender.city}
             </p>
           </div>
-          <ArrowRight className="shrink-0 text-cyan-400" />
+          <ArrowRight className="shrink-0 text-[#35d7f2]" />
           <div className="min-w-0 flex-1 text-right">
             <p className="truncate font-medium text-white">{recipient.name}</p>
             <p className="text-xs text-slate-500">
@@ -111,7 +111,7 @@ export function InvestigationPanel({
         <div className="mt-5 flex gap-2">
           <Button
             onClick={onTrace}
-            className="flex-1 bg-cyan-400 text-slate-950 hover:bg-cyan-300"
+            className="flex-1 bg-[#35d7f2] text-[#031018] hover:bg-[#66e7f8]"
           >
             <Network />
             Follow the money
@@ -129,7 +129,7 @@ export function InvestigationPanel({
       </div>
       <div className="rounded-xl border border-slate-800 bg-slate-900/60 p-5">
         <h3 className="flex items-center gap-2 font-semibold text-white">
-          <Activity size={17} className="text-amber-300" />
+          <Activity size={17} className="text-[#ff6b63]" />
           Why was this flagged?
         </h3>
         <p className="mt-2 text-sm text-slate-400">{risk.explanation}</p>
@@ -138,13 +138,13 @@ export function InvestigationPanel({
             risk.factors.map((factor) => (
               <div
                 key={factor.name}
-                className="border-l-2 border-cyan-800 pl-3"
+                className="border-l-2 border-[#35d7f2]/50 pl-3"
               >
                 <div className="flex justify-between gap-2">
                   <p className="text-sm font-medium text-slate-200">
                     {factor.name}
                   </p>
-                  <span className="text-xs font-semibold text-cyan-300">
+                  <span className="text-xs font-semibold text-[#62e6f8]">
                     +{factor.score}
                   </span>
                 </div>

@@ -50,7 +50,7 @@ export function NetworkGraph({
       style: {
         color: '#e2e8f0',
         background: suspicious ? '#4c0519' : '#0f2537',
-        border: `1px solid ${suspicious ? '#fb7185' : '#22d3ee'}`,
+        border: `1px solid ${suspicious ? '#ff5c55' : '#35d7f2'}`,
         borderRadius: 10,
         fontSize: 11,
         width: 122,
@@ -70,14 +70,14 @@ export function NetworkGraph({
     style: {
       stroke:
         t.id === selectedId
-          ? '#f59e0b'
+          ? '#ffffff'
           : (assessments.get(t.id)?.score ?? 0) >= 50
-            ? '#fb7185'
-            : '#38bdf8',
+            ? '#ff5c55'
+            : '#35d7f2',
       strokeWidth: t.id === selectedId ? 3 : 1.5,
     },
     labelStyle: { fill: '#94a3b8', fontSize: 9 },
-    markerEnd: { type: MarkerType.ArrowClosed, color: '#64748b' },
+    markerEnd: { type: MarkerType.ArrowClosed, color: '#35d7f2' },
   }));
   if (!txs.length)
     return (

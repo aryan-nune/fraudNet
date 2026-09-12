@@ -11,9 +11,9 @@ export function StatCard({
   tone?: 'cyan' | 'rose' | 'amber';
 }) {
   const colors = {
-    cyan: 'text-cyan-300 bg-cyan-400/10',
-    rose: 'text-rose-300 bg-rose-400/10',
-    amber: 'text-amber-300 bg-amber-400/10',
+    cyan: 'text-[#59e2f7] bg-[#35d7f2]/10',
+    rose: 'text-[#ff726b] bg-[#ff5c55]/10',
+    amber: 'text-[#ffd1ce] bg-[#ff5c55]/10',
   };
   return (
     <div className="rounded-xl border border-slate-800 bg-slate-900/65 p-4 shadow-[0_16px_40px_rgba(0,0,0,.18)]">
